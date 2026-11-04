@@ -1,0 +1,296 @@
+<title>Roblox参入プラン</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: 1カラムの読み物。結論→市場→作り方→企画→環境→工程→やること。表は横スクロール枠に収める */
+:root {
+  --bg: #f4f5f1;
+  --surface: #ffffff;
+  --fg: #1c1f24;
+  --muted: #5d6470;
+  --line: #dfe2dc;
+  --accent: #d9480f;      /* 提灯の朱 */
+  --accent-soft: #fbe7dc;
+  --teal: #0b7a75;
+  --teal-soft: #dcefed;
+  --warn: #9a6700;
+  --warn-soft: #fbf0d5;
+  --display: "Dela Gothic One", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --body: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161a; --surface: #1c1f25; --fg: #e9eae6; --muted: #a2a8b2; --line: #2e323a;
+    --accent: #ff8a4c; --accent-soft: #3a2218; --teal: #4cc3bc; --teal-soft: #15302e;
+    --warn: #f0c060; --warn-soft: #33290f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161a; --surface: #1c1f25; --fg: #e9eae6; --muted: #a2a8b2; --line: #2e323a;
+  --accent: #ff8a4c; --accent-soft: #3a2218; --teal: #4cc3bc; --teal-soft: #15302e;
+  --warn: #f0c060; --warn-soft: #33290f; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.8; }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 80px; display: grid; gap: 56px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; color: var(--muted); font-weight: 500; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 6vw, 46px); line-height: 1.25; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 4vw, 28px); line-height: 1.35; margin: 0 0 6px; text-wrap: balance; }
+h3 { font-size: 18px; margin: 0; font-weight: 700; }
+p { margin: 0; max-width: 68ch; }
+section { display: grid; gap: 18px; }
+.lead { font-size: 17px; color: var(--muted); }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--accent); border-radius: 10px; padding: 22px 22px; display: grid; gap: 12px; }
+.verdict ol { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.verdict strong { color: var(--accent); }
+ul.plain { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 99px; vertical-align: 2px; margin-left: 4px; letter-spacing: .04em; }
+.t-fact { background: var(--teal-soft); color: var(--teal); }
+.t-rep { background: var(--warn-soft); color: var(--warn); }
+.t-est { background: var(--accent-soft); color: var(--accent); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fact .num { font-family: var(--mono); font-size: 22px; color: var(--fg); font-variant-numeric: tabular-nums; }
+.fact .cap { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 14.5px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12.5px; color: var(--muted); font-weight: 700; letter-spacing: .04em; background: var(--bg); }
+tr:last-child td { border-bottom: 0; }
+td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.concept { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: grid; gap: 14px; }
+.concept.pick { border: 2px solid var(--accent); }
+.concept-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; }
+.concept-head .title { font-family: var(--display); font-size: 22px; }
+.concept-head .score { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+.concept-head .score b { font-size: 26px; color: var(--accent); }
+.badge { font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 3px 10px; border-radius: 99px; }
+.badge.second { background: var(--teal); }
+.bars { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 16px; }
+.bar { display: grid; gap: 3px; font-size: 12.5px; color: var(--muted); }
+.bar i { display: block; height: 6px; border-radius: 3px; background: var(--line); position: relative; overflow: hidden; }
+.bar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: calc(var(--v) * 20%); background: var(--accent); border-radius: 3px; }
+dl.spec { display: grid; grid-template-columns: 7.5em 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+dl.spec dt { color: var(--muted); font-weight: 700; font-size: 13px; padding-top: 2px; }
+dl.spec dd { margin: 0; min-width: 0; }
+@media (max-width: 520px) { dl.spec { grid-template-columns: 1fr; gap: 2px; } dl.spec dd { margin-bottom: 10px; } }
+.timeline { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
+.step { position: relative; padding: 0 0 22px 22px; display: grid; gap: 4px; }
+.step::before { content: ""; position: absolute; left: -8px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent); }
+.step .when { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.todo { display: grid; gap: 10px; }
+.todo label { display: flex; gap: 10px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
+.todo input { margin-top: 6px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+.todo input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font-family: var(--mono); font-size: .88em; background: var(--bg); border: 1px solid var(--line); padding: 1px 5px; border-radius: 5px; word-break: break-all; }
+.note { background: var(--warn-soft); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; display: grid; gap: 8px; }
+.note strong { color: var(--warn); }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.panel h3 { font-size: 16px; }
+footer { font-size: 13px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">2026年11月4日時点の調査・ソロ＋AI制作向け</div>
+  <h1>Robloxで稼ぐための参入プラン</h1>
+  <p class="lead">市場・ヒット作・制作チームのやり方を調べたうえで、作るべきゲームと、AIで回す制作環境を用意しました。</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <h2>結論</h2>
+    <ol>
+      <li><strong>1本目は「妖怪ランタン神社（仮）」を推奨します。</strong>2026年いちばん伸びている「Steal系×収集×放置」の型に、日本的な世界観と「昼は守る、夜は誘い出す」のリズムを足した企画です。テンプレートの放置収益・卵ガチャ・天井・リバースをそのまま流用できます。</li>
+      <li><strong>2本目の候補は協力型の異変探し「Anomaly Line（仮）」です。</strong>友人と遊ぶ指標と切り抜き映えは最強ですが、課金が弱いので、1本目の判定後に1週間で試作します。</li>
+      <li><strong>勝ち方は「3〜4週で出す→28日の数字で続けるか撤退するか決める→当たったら週次更新」です。</strong>2026年6月から推薦が28日リテンションと継続課金で決まるようになり、クローンの初速だけでは伸びなくなりました。</li>
+      <li><strong>開発環境は構築済みです。</strong>Luauの品質ゲート（整形・Lint・厳密な型チェック・テスト・ビルド）、Blenderでのローポリ3D量産、Roblox専用スキル5本、公式ドキュメントのローカル版がそろっています。</li>
+      <li><strong>あなたにお願いしたいのは3つです。</strong>GitHubリポジトリの用意（このクラウド環境は使い捨てのため）、RobloxアカウントのID認証と2FA、PCにStudioとClaude Codeを入れることです。</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>市場の今</h2>
+  <p>ラベルの意味：<span class="tag t-fact">確定</span> 公式資料、<span class="tag t-rep">報道</span> メディア報道、<span class="tag t-est">推計</span> トラッカーや筆者の推定。</p>
+  <div class="facts">
+    <div class="fact"><span class="num">28日</span><span class="cap">推薦（RFY）の評価期間。2026年6月に7日から変わった。最重要は初回プレイの離脱率で、次が友人と遊んだ日数・課金した日数。<span class="tag t-fact">確定</span></span></div>
+    <div class="fact"><span class="num">1.38億 DAU</span><span class="cap">2026年Q3。前年比−9%で、年齢確認の影響による調整期。2025年級の爆発的ヒットは前提にしない。<span class="tag t-fact">確定</span></span></div>
+    <div class="fact"><span class="num">80%超</span><span class="cap">上位100作のうちAIで開発している割合。ほぼAI製の2作が同時接続数のTop20入り。AIを使っていても差はつかず、差はスピードで出る。<span class="tag t-rep">報道</span></span></div>
+    <div class="fact"><span class="num">$0.0038 / R$</span><span class="cap">DevExのレート。売上の70%がRobuxで入るので、プレイヤーが払う1ドルのうち手取りは約21〜30セント。<span class="tag t-fact">確定</span></span></div>
+    <div class="fact"><span class="num">D1 10.3%</span><span class="cap">MAU100万超の作品の中央値。D7は1.6%、セッションは9.8分、課金率は約3.8%。上位1%でもD1は22%。<span class="tag t-rep">報道</span></span></div>
+    <div class="fact"><span class="num">日本 +67%</span><span class="cap">日本のDAU成長率（2026年Q2、前年比）。ただし日本製ゲームの収益の約57%は海外から来るので、英語で作り、日本語は追加で対応する。<span class="tag t-fact">確定</span> <span class="tag t-rep">報道</span></span></div>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <h3>伸びている型</h3>
+      <ul class="plain">
+        <li>Steal系×卵・ペット収集×放置（Steal An Egg：同時接続ピーク約1,430万）<span class="tag t-est">推計</span></li>
+        <li>協力型ホラー・サバイバル（99 Nights、DONT SPLASH、Forsaken）</li>
+        <li>アニメ系RPG、季節イベントが強い長寿作</li>
+        <li>18歳以上向けのR15ゲーム（米国の成人の支出はDevExが+42%）<span class="tag t-fact">確定</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>避けるもの</h3>
+      <ul class="plain">
+        <li>素のブレインロットクローン（SaBは2,500万から約20万に）</li>
+        <li>続編・二番煎じ（GaG2はピークの約1%）</li>
+        <li>寄付ゲーム（2026年5月に仕組みが廃止）</li>
+        <li>既存作の見た目・名前の模倣（推薦で不利になり、訴訟例もある）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>ヒットを出しているチームのやり方</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>作品</th><th>体制</th><th>初版</th><th>伸びた理由</th></tr></thead>
+    <tbody>
+      <tr><td>Grow a Garden</td><td>10代1人 → 約20人の運営会社が共同所有</td><td class="n">約3日</td><td>毎週土曜の更新と管理者イベント、5分ごとの在庫入れ替え、フレンドボーナス</td></tr>
+      <tr><td>99 Nights in the Forest</td><td>3人（デザイン・コード・環境アート）</td><td class="n">—</td><td>協力ホラーで配信映えする。バイオームを継続的に追加</td></tr>
+      <tr><td>Fisch</td><td>ほぼ1人（19歳）</td><td class="n">約4か月</td><td>釣り×収集。大型イベントで同時接続47万</td></tr>
+      <tr><td>Steal An Egg</td><td>小規模グループ</td><td class="n">—</td><td>SaBのループと卵・ペットの合成</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="plain">
+    <li><b>作る人と伸ばす人が分かれている。</b>伸び始めた作品をスタジオが買収・共同運営する（2024年12月からゲームの譲渡が公式にできるようになった）。</li>
+    <li><b>小さな賭けをたくさん。</b>プロトタイプは数日〜2週間。広告は少額で、サムネイルとコンセプトの検証用に使う（広告経由のユーザーは推薦の評価に入らない）。</li>
+    <li><b>当たったら「毎週小さく、月1回大きく」更新し、土曜は同時刻イベント。</b>毎週の大型更新を義務化したスタジオはクランチで失敗している。</li>
+    <li><b>規約は最初から設計に入れる。</b>有料ガチャは確率表示とPolicyServiceでの制限、価格は動的に取得、成熟度ラベル、チャットなしでも成立するUI。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>ゲーム企画</h2>
+  <p>採点は6軸×5点で、22点以上なら着手します（基準は <code>roblox-game-concept</code> スキルに記載）。名前はすべて仮称で、見た目もオリジナルで作ります。</p>
+
+  <article class="concept pick">
+    <div class="concept-head"><span class="title">妖怪ランタン神社（Yokai Lantern Shrine）</span><span class="badge">1本目に推奨</span><span class="score"><b>26</b> / 30</span></div>
+    <div class="bars">
+      <div class="bar">一目で分かる 4<i style="--v:4"></i></div>
+      <div class="bar">最初の5分 4<i style="--v:4"></i></div>
+      <div class="bar">28日の再訪 5<i style="--v:5"></i></div>
+      <div class="bar">友人と遊ぶ 4<i style="--v:4"></i></div>
+      <div class="bar">切り抜き映え 4<i style="--v:4"></i></div>
+      <div class="bar">制作の現実性 5<i style="--v:5"></i></div>
+    </div>
+    <dl class="spec">
+      <dt>ループ</dt><dd>夜（数分ごとに来る）に提灯で街の妖怪を誘い、自分の神社に連れ帰る → 妖怪が参拝客を呼んで放置収益が入る → 神社を拡張・強化 → 転生（リバース）。夜の間は他人の神社から妖怪を誘い出せる。お札や結界で守る。</dd>
+      <dt>ひねり</dt><dd>昼は守り、夜は攻めるリズム。「盗む」ではなく「誘い出す」なので暴力表現がなく、Minimal/Mildのラベルで子ども層にも届く。妖怪はかわいい系の完全オリジナルデザインにする。</dd>
+      <dt>最初の5分</dt><dd>60秒で最初の妖怪が来る → 2分で放置収益が見える → 4分で初めての夜に誘い出しを成功させる。</dd>
+      <dt>友人と遊ぶ</dt><dd>神社を共同運営する（フレンドがいると収益が＋％）。協力すると夜の誘い出しの成功率が上がる。チャットなしで使える合図ボタン。</dd>
+      <dt>28日の再訪</dt><dd>オフライン収益、屋台の在庫入れ替え（数分ごと）、妖怪図鑑、毎週の新しい妖怪、土曜の「百鬼夜行」イベント。</dd>
+      <dt>課金</dt><dd>運2倍の提灯、自動誘い、夜の延長、神社のスキン、消費型のお札（Dev Product）、限定の妖怪卵（確率表示と天井付き）。</dd>
+      <dt>制作</dt><dd>テンプレートの放置収益・卵・天井・リバース・課金処理を流用する。妖怪と建物はBlenderのパレット方式で量産する。</dd>
+      <dt>リスク</dt><dd>Steal系は競合が多い。既存の妖怪作品のデザインに似せない（伝承の妖怪名は使えるが、絵はオリジナルにする）。</dd>
+    </dl>
+  </article>
+
+  <article class="concept">
+    <div class="concept-head"><span class="title">Anomaly Line（異変列車・協力2〜4人）</span><span class="badge second">2本目の候補</span><span class="score"><b>25</b> / 30</span></div>
+    <div class="bars">
+      <div class="bar">一目で分かる 5<i style="--v:5"></i></div>
+      <div class="bar">最初の5分 5<i style="--v:5"></i></div>
+      <div class="bar">28日の再訪 2<i style="--v:2"></i></div>
+      <div class="bar">友人と遊ぶ 5<i style="--v:5"></i></div>
+      <div class="bar">切り抜き映え 5<i style="--v:5"></i></div>
+      <div class="bar">制作の現実性 3<i style="--v:3"></i></div>
+    </div>
+    <dl class="spec">
+      <dt>ループ</dt><dd>ループする深夜列車の車両で異変を探し、全員の投票で「非常ブレーキ」を引くか見送るかを決める。8駅連続で正解すると脱出、間違えると怪異とのチェイスになる。</dd>
+      <dt>ひねり</dt><dd>異変探し×協力投票×チェイス。舞台は列車にし、既存の異変探し作品の通路の見た目には寄せない。</dd>
+      <dt>弱点</dt><dd>課金はコスメ・復活・プライベートサーバー程度。異変を毎週追加し続ける必要がある（データ駆動にしてAIで量産する）。</dd>
+    </dl>
+  </article>
+
+  <div class="tbl"><table>
+    <thead><tr><th>見送った案</th><th>点数</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td>温泉旅館ナイトシフト（協力サバイバル）</td><td class="n">22</td><td>友人と遊ぶ点は強いが、屋内アセットが多く重い。3本目以降の候補</td></tr>
+      <tr><td>回転寿司タイクーン</td><td class="n">21</td><td>タイクーンは飽和気味で、切り抜きの瞬間が弱い</td></tr>
+      <tr><td>怪獣ガーデン（育成×自動バトル）</td><td class="n">20</td><td>ルールが一目で伝わらない</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>作った環境</h2>
+  <div class="split">
+    <div class="panel">
+      <h3>コード（品質ゲート付き）</h3>
+      <ul class="plain">
+        <li>Rojo 7.7.1 / selene / StyLua 2.6.0 / luau-lsp 1.70.1 / Lune 0.11.1 / Wally / darklua / luau 0.745</li>
+        <li><code>tools/check.sh</code> で整形→Lint→厳密な型チェック→テスト12件→.rbxlビルドまで全部通過</li>
+        <li>ゲームテンプレート：セッションロック付きのデータ保存、冪等な課金処理、天井付きガチャと確率表示、PolicyService対応、レート制限、経済式、モバイル向けHUD</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>3Dモデリング</h3>
+      <ul class="plain">
+        <li>Blender 5.2.3（ヘッドレス）で、JSONの仕様からローポリ資産を生成</li>
+        <li>パレットテクスチャ1枚の方式（軽くて画風がそろう）。FBX/GLBとプレビュー画像を出力</li>
+        <li>試作10種（木・岩・卵・ペットなど）は各20〜612三角形で、上限の20,000を大きく下回る</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>AIスキル（5本）</h3>
+      <ul class="plain">
+        <li>企画（採点表、GDD、撤退ライン）</li>
+        <li>Luau実装（セキュリティと規約の鉄則）</li>
+        <li>3Dアセット（制限、生成、外部AIの商用ライセンス）</li>
+        <li>公開と運営（2026年の公開要件、KPI、週次運営）</li>
+        <li>Studio連携（内蔵MCP、Rojo、Open Cloud）</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>知識ベース</h3>
+      <ul class="plain">
+        <li>調査レポート3本（市場、スタジオの手法、AIツール。出典URLとラベル付き）</li>
+        <li>Roblox公式ドキュメント本文1,042ページのローカル版。AIは推測せずにここを参照する</li>
+        <li>Roblox APIの型定義とAPIダンプ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">
+    <div><strong>役割分担について：</strong>Studioに内蔵されたMCPはPC上のClaude Codeからしか接続できません。クラウド側は企画・コード・テスト・3D生成・ビルドを担当し、PC側はStudioでの配置・見た目の確認・プレイテスト・公開を担当します。</div>
+  </div>
+</section>
+
+<section>
+  <h2>8週間の進め方</h2>
+  <div class="timeline">
+    <div class="step"><span class="when">今週</span><h3>準備</h3><p>GitHubリポジトリを作って環境を保存する。Robloxのアカウントで ID認証と2FAを済ませる。PCにStudio、Claude Code、Rokit、Rojoプラグインを入れ、MCPのQuick Connectを有効にする。</p></div>
+    <div class="step"><span class="when">1〜2週</span><h3>妖怪ランタン神社のMVP</h3><p>GDDを確定し、コアループと最初の5分を実装する。妖怪・提灯・神社の部品を30点ほど生成する。</p></div>
+    <div class="step"><span class="when">3週</span><h3>試遊と公開</h3><p>友人と試遊する。サムネイル5枚を作り、成熟度アンケートに答え、英語と日本語で公開する。</p></div>
+    <div class="step"><span class="when">4週</span><h3>少額広告で判定</h3><p>CTR、5分残存率、D1を見る。基準に届けば週次運営に移り、届かなければ改善を2〜3回試す。</p></div>
+    <div class="step"><span class="when">5〜8週</span><h3>運営、または2本目</h3><p>続けるなら毎週の小さな更新と土曜イベントを回す。撤退するなら Anomaly Line を1週間で試作する。D1が15%を超えたら Roblox Jumpstart に応募する。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>お願いしたいこと</h2>
+  <div class="todo">
+    <label for="t1"><input type="checkbox" id="t1"><span><b>GitHubに空のリポジトリを作り、名前を教えてください。</b>このクラウド環境は使い捨てなので、push しないと作った環境が消えます。</span></label>
+    <label for="t2"><input type="checkbox" id="t2"><span><b>RobloxアカウントのID認証と2FAを済ませてください。</b>16歳未満の層に届けるための公開要件です。必要ならRoblox Plusに加入するか、1,000R$を預けます。</span></label>
+    <label for="t3"><input type="checkbox" id="t3"><span><b>PCにRoblox StudioとClaude Codeを入れてください。</b>Studioの Assistant → Manage MCP Servers → Enable Studio as MCP server → Quick Connect で Claude Code を有効にします。</span></label>
+    <label for="t4"><input type="checkbox" id="t4"><span><b>（任意）Studioを使わずに自動で公開したい場合</b>は、環境のネットワーク許可に <code>apis.roblox.com</code> を追加し、Open CloudのAPIキーをシークレットとして登録します。</span></label>
+    <label for="t5"><input type="checkbox" id="t5"><span><b>企画を選んでください。</b>妖怪ランタン神社で進めてよいか、別の方向にするか。</span></label>
+  </div>
+</section>
+
+<section>
+  <h2>データの限界</h2>
+  <div class="note">
+    <div><strong>調査はWeb検索の要約経由です。</strong>この環境ではいくつかのサイトの本文を直接読めませんでした。公式ドキュメントはGitHubの公式ミラーで原文を確認しています。</div>
+    <div><strong>売上の推計はトラッカーによって数倍ずれます。</strong>オーダー感の参考にとどめてください。収益は保証できず、大半のゲームは小さな収益で終わります。複数本を素早く試し、数字で判断する前提のプランです。</div>
+  </div>
+</section>
+
+<footer>出典の一覧は research/01〜03 の各レポート末尾にあります。</footer>
+</div>
