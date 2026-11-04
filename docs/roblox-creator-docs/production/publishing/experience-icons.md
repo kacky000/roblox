@@ -1,0 +1,115 @@
+---
+title: Icons
+description: Icons are an important factor in helping users recognize your experience and grow its brand.
+---
+
+A high-quality **icon**, in addition to a showcase [thumbnail](thumbnails.md), is an important factor in helping users recognize your game and grow its brand. With prominent placement in various sections of the [Home](https://www.roblox.com/home) page, it's recommended that the icon expresses the theme, tone, and/or genre of the game.
+
+<GridContainer numColumns="3">
+	<figure>
+  <img src="../../assets/publishing/experience-metadata/Icon-Action.jpg" alt="Icon expressing an urban action game" />
+	<figcaption>Urban action game</figcaption>
+  </figure>
+	<figure>
+  <img src="../../assets/publishing/experience-metadata/Icon-Camping.jpg" alt="Icon expressing a camping simulation" />
+	<figcaption>Camping simulation</figcaption>
+  </figure>
+	<figure>
+  <img src="../../assets/publishing/experience-metadata/Icon-Ocean.jpg" alt="Icon expressing an ocean theme" />
+	<figcaption>Peaceful ocean theme</figcaption>
+  </figure>
+</GridContainer>
+
+When you [publish a game](../../production/publishing/publish-games-and-places.md) for the first time, an icon is automatically generated from a collection of default images. While you can only display one icon per [locale](../../production/localization/index.md), you can also include supplementary [image and video thumbnails](thumbnails.md) that further promote the game.
+
+For more information on maximizing the impact of your game's icon, see [best practices](#best-practices).
+
+## Upload icons
+
+To ensure your game's icon always displays in high resolution and with an ideal aspect ratio, use a template of **512×512 pixels**. In some places on the Roblox site and app, icons scale down to smaller sizes like 150×150 pixels, so it's recommended that you preview an icon at smaller sizes to confirm its details remain clear. In addition, see [best practices](#best-practices) for tips on icon format and design.
+
+To upload a game icon:
+
+1. Navigate to the [Creator Dashboard](https://create.roblox.com/dashboard/creations).
+1. Click on the game you want to upload an icon for. The game's **Overview** page displays.
+1. In the left-hand navigation, navigate to **Configurations** > **Places**.
+1. Click the **start place** marked with a star icon (if the game contains only one place, it will be the only option). The place's **Basic Settings** page displays.
+
+   <img src="../../assets/creator-dashboard/Places-Start-Place-No-Icon.png" width="200" alt="Start place tile indicated in Places display on the Creator Dashboard" />
+
+1. In the place's left-hand navigation menu, select **Icon**.
+1. Set the media type to **Image** and click the **Change** button. Then, from the file browser, select and confirm the image you want to use as the icon. Note that all icon images must pass [moderation](../../projects/assets/index.md#asset-moderation) before they appear to others on the Roblox platform.
+1. If the preview icon appears as you expect, click **Save Changes**.
+
+## Best practices
+
+To create the most positive impact for users looking to play your game, consider the following best practices.
+
+### Quality and aspect ratio
+
+When you upload an icon image, it should be **square** and at least **512×512 pixels** so that it always displays in high resolution and at an ideal aspect ratio across the Roblox site and app.
+
+<GridContainer numColumns="3">
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-High-Res.jpg" alt="High quality and sharp icon" />
+    <figcaption>
+      <Alert severity="success">High quality and sharp</Alert>
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Low-Res.jpg" alt="Low quality and blurry icon example" />
+    <figcaption>
+      <Alert severity="error">Low quality and blurry</Alert>
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Not-Square.jpg" alt="Non-square icon" />
+    <figcaption>
+      <Alert severity="error">Not a square image</Alert>
+    </figcaption>
+  </figure>
+</GridContainer>
+
+### Relevant content
+
+An icon will have a higher impact if it's unique and provides relevant imagery on what users should expect when they join the game. Icons with ambiguous graphics may lead to unnecessary confusion.
+
+<GridContainer numColumns="3">
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Theme-Park.jpg" alt="Icon expressing a fun theme park setting" />
+    <figcaption>
+      <Alert severity="success">Icon expresses a fun theme park setting</Alert>
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Default.jpg" alt="Default Roblox icon which does not match the same theme" />
+    <figcaption>
+      <Alert severity="error">Default icon does not match the same theme</Alert>
+    </figcaption>
+  </figure>
+	<figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Theme-Park-Symbol.jpg" alt="Icon with ambiguous graphic in top-right corner" />
+    <figcaption>
+      <Alert severity="error">Ambiguous graphic in top‑right corner</Alert>
+    </figcaption>
+  </figure>
+</GridContainer>
+
+### Color and contrast
+
+You can express your game's theme through color and contrast to help users decide if it's suitable and appealing to them.
+
+<GridContainer numColumns="3">
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Colorization-A.jpg" alt="Icon with bright, high-saturation colors for a fantasy or dreamy setting" />
+    <figcaption>Bright, high-saturation colors for a fantasy or dreamy setting</figcaption>
+  </figure>
+	<figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Colorization-B.jpg" alt="Icon with muted low-saturation colors for a somber, moody setting" />
+    <figcaption>Muted low-saturation colors for a somber, moody setting</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/publishing/experience-metadata/Icon-Colorization-C.jpg" alt="Icon with heavy color balance and contrast for a horror game" />
+    <figcaption>Heavy color balance and contrast for a horror game</figcaption>
+  </figure>
+</GridContainer>

@@ -1,0 +1,15 @@
+{
+  "out": "assets/sample_pack",
+  "assets": [
+    {"kind": "tree", "name": "PineTree", "seed": 1, "params": {"height": 7, "layers": 3}},
+    {"kind": "round_tree", "name": "OakTree", "seed": 2, "params": {"blobs": 4}},
+    {"kind": "rock", "name": "Rock", "seed": 3, "params": {"size": 2.5}},
+    {"kind": "crystal", "name": "Crystal", "seed": 4, "params": {"color": "teal5", "count": 5}},
+    {"kind": "crate", "name": "Crate", "seed": 5},
+    {"kind": "coin", "name": "Coin", "seed": 6},
+    {"kind": "egg", "name": "BasicEgg", "seed": 7, "params": {"color": "blue6", "spot": "yellow6"}},
+    {"kind": "pet", "name": "BlobPet", "seed": 8, "params": {"color": "pink5"}},
+    {"kind": "mushroom", "name": "Mushroom", "seed": 9},
+    {"kind": "fence", "name": "Fence", "seed": 10}
+  ]
+}

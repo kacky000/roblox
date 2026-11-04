@@ -1,0 +1,11 @@
+.venv/
+assets/**/*.fbx
+assets/**/*.glb
+games/*/build/
+games/*/sourcemap.json
+games/*/roblox.yml
+games/*/Packages/*
+!games/*/Packages/.gitkeep
+*.rbxl
+*.rbxlx
+.env

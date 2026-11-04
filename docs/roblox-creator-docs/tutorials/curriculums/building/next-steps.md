@@ -1,0 +1,40 @@
+---
+title: Next steps
+description: Explains ways to continue learning about building in Studio.
+next: /tutorials/curriculums/coding/
+prev: /tutorials/curriculums/building/test-and-save
+---
+
+Congratulations on building your first obby with Roblox Studio! Now that you have experience creating and customizing basic parts with unique visuals and behavior, you can share your creation with others and extend your skills by learning about Studio's additional building features.
+
+## Share with others
+
+When you first publish a game, it's only playable by you as the creator. However, creating on Roblox is always more fun when you can share what you make with others. For steps on inviting early testers to preview your game, see [Invite early testers](../../../production/publishing/publish-games-and-places.md#invite-early-testers). For steps on how to release your game to players, see [Release games](../../../production/publishing/publish-games-and-places.md#release-games).
+
+## Continue learning
+
+Basic parts are an excellent start for building in the 3D space, but Studio offers many additional features to create environments in your games, including:
+
+- [Materials](../../../parts/materials.md) that change the visual appearance and physical properties of parts.
+- [Terrain Editor](../../../parts/terrain.md) that generates realistic terrain environments, such as mountains, grass-covered hills, or a flat desert.
+- [Textures and decals](../../../parts/textures-decals.md) that decorate parts with 2D images that either scale or stretch, respectively.
+- [Solid modeling operations](../../../parts/solid-modeling.md) that join parts together in unique ways to form more complex shapes known as unions or intersections.
+
+<GridContainer numColumns="2">
+  <figure>
+    <img src="../../../assets/tutorials/building-lesson/materials.png" alt="Two rows of optional materials." />
+    <figcaption>Materials</figcaption>
+  </figure>
+  <figure>
+    <img src="../../../assets/studio/terrain-editor/Fill-Region.jpg" alt="Region filled with Salt material" />
+    <figcaption>Salt terrain</figcaption>
+  </figure>
+  <figure>
+    <img src="../../../assets/tutorials/building-lesson/Texture-On-Surface.jpg" alt="The same blue texture repeated eight times on a block part." />
+    <figcaption>Hexagon texture on a part</figcaption>
+  </figure>
+  <figure>
+    <img src="../../../assets/modeling/solid-modeling/Negate-Result.jpg"  alt="Negated part subtracted from cylinder" />
+    <figcaption>Solid modeling union</figcaption>
+  </figure>
+</GridContainer>

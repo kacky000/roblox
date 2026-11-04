@@ -1,0 +1,132 @@
+[
+  {
+    "name": "PineTree",
+    "kind": "tree",
+    "tris": 80,
+    "size_studs": [
+      3.81,
+      4.06,
+      7.1
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/PineTree.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/PineTree.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/PineTree.png"
+  },
+  {
+    "name": "OakTree",
+    "kind": "round_tree",
+    "tris": 100,
+    "size_studs": [
+      3.79,
+      4.15,
+      5.82
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/OakTree.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/OakTree.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/OakTree.png"
+  },
+  {
+    "name": "Rock",
+    "kind": "rock",
+    "tris": 20,
+    "size_studs": [
+      2.67,
+      2.36,
+      1.67
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Rock.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Rock.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Rock.png"
+  },
+  {
+    "name": "Crystal",
+    "kind": "crystal",
+    "tris": 40,
+    "size_studs": [
+      1.32,
+      1.46,
+      2.8
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Crystal.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Crystal.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Crystal.png"
+  },
+  {
+    "name": "Crate",
+    "kind": "crate",
+    "tris": 68,
+    "size_studs": [
+      2.04,
+      2.04,
+      2.0
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Crate.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Crate.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Crate.png"
+  },
+  {
+    "name": "Coin",
+    "kind": "coin",
+    "tris": 60,
+    "size_studs": [
+      2.0,
+      0.25,
+      2.0
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Coin.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Coin.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Coin.png"
+  },
+  {
+    "name": "BasicEgg",
+    "kind": "egg",
+    "tris": 268,
+    "size_studs": [
+      2.15,
+      1.87,
+      2.4
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/BasicEgg.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/BasicEgg.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/BasicEgg.png"
+  },
+  {
+    "name": "BlobPet",
+    "kind": "pet",
+    "tris": 612,
+    "size_studs": [
+      2.0,
+      1.88,
+      2.3
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/BlobPet.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/BlobPet.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/BlobPet.png"
+  },
+  {
+    "name": "Mushroom",
+    "kind": "mushroom",
+    "tris": 204,
+    "size_studs": [
+      1.45,
+      1.52,
+      1.43
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Mushroom.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Mushroom.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Mushroom.png"
+  },
+  {
+    "name": "Fence",
+    "kind": "fence",
+    "tris": 200,
+    "size_studs": [
+      6.3,
+      0.3,
+      1.5
+    ],
+    "fbx": "/home/user/roblox-studio/assets/sample_pack/Fence.fbx",
+    "glb": "/home/user/roblox-studio/assets/sample_pack/Fence.glb",
+    "preview": "/home/user/roblox-studio/assets/sample_pack/Fence.png"
+  }
+]

@@ -1,0 +1,326 @@
+---
+title: Extended Services
+description: Extended Services lets you pay for data store, memory store, and speech usage, and for more server CPU, beyond Roblox's default limits.
+---
+
+Extended Services is a solution that lets you manage service usage and payment beyond Roblox's default limits. It includes data stores, memory stores, text-to-speech, speech-to-text, and compute.
+
+## Eligibility requirements
+
+To use Extended Services, your Roblox account must:
+
+- Be [ID-verified](../production/publishing/account-verification.md#verify-through-government-id) and 18+ years old.
+- Be located in a [supported country](#supported-countries).
+- Have a valid email address associated with it.
+- Not currently be banned or moderated.
+- Accept and comply with the [terms of service](https://en.help.roblox.com/hc/articles/37967848292500).
+
+<Alert severity="info">
+  For group accounts, only the group owner needs to meet the eligibility requirements.
+</Alert>
+
+## Unlock Extended Services
+
+If you meet all of the [eligibility requirements](#eligibility-requirements), you can finish setting up Extended Services by entering your account details and payment information. For group-owned games, only the group owner can unlock Extended Services and onboard the game onto it.
+
+To unlock and use Extended Services:
+
+1. In the [Creator Dashboard](https://create.roblox.com/dashboard/creations), go to **Creations** and select a game.
+2. Go to **Extended Services**.
+3. If you haven't entered your account details and payment information yet, click **Add missing information** on the top banner.
+   1. Enter your account information. The **Account type**, **Tax ID type**, and **Tax ID** fields are optional.
+      - You can also go to **Finances** ⟩ **Account Information** under the **Extended Services** section to manage your account information. You don't need to update anything else on this page.
+   2. Click **Next**.
+   3. Enter a payment method. You can enter a new payment method or select from the available payment options already associated with your Roblox account.
+      - You can also go to **Finances** ⟩ **Payments** to add new payment methods, or go to **Finances** ⟩ **Billing** to set a new default payment method.
+   4. Click **Save**.
+
+<h5>Account status</h5>
+
+Your Extended Services account can be in one of the following statuses:
+
+<table>
+<thead>
+  <th width="15%">**Status**</th>
+  <th width="40%">**Description**</th>
+  <th width="80%">**Required action**</th>
+</thead>
+<tbody>
+  <tr>
+    <td>**Normal**</td>
+    <td>You can use all Extended Services features.</td>
+    <td>No action is required.</td>
+  </tr>
+  <tr>
+    <td>**Overdue**</td>
+    <td>Your account is overdue because your automatic payment method failed. Roblox offers a grace period of **seven days** before suspending your Extended Services account.</td>
+    <td>Change your payment method and retry a manual payment, or wait until Roblox attempts to charge your payment method again after the grace period has ended.</td>
+  </tr>
+  <tr>
+    <td>**Suspended**</td>
+    <td>You can't use any paid Extended Services. You can, however, still use services with default limits.</td>
+    <td>Fix your eligibility requirements, add a valid payment method, or manually pay the overdue balance on your account.</td>
+  </tr>
+</tbody>
+</table>
+
+## Enable a service
+
+To enable a service:
+
+1. Go to **Extended Services**.
+2. Toggle on the service you want to enable.
+3. Enter a monthly budget for each applicable resource under the service. The minimum monthly budget you can set is $0.50 USD.
+
+Your payment method is charged either at the end of the month when a bill is generated, or when your usage reaches $10 USD, whichever comes first.
+
+You can increase or decrease a service's monthly budget any time. Your service is automatically throttled if you decrease your budget to an amount below your current month-to-date usage, or if you exceed the budget you have set.
+
+Roblox notifies you by email when your usage reaches 80% of your budget, and then again when it reaches 100%.
+
+### Extended Services for Compute
+
+Every game server gets a default amount of CPU, which grows with each player who joins. **Extended Services for Compute** more than doubles the per-player CPU that your game's servers receive.
+
+The vast majority of games on Roblox see no benefit from this service, but games with heavy server-side physics or that make extensive use of [server authority](../projects/server-authority/index.md) hit existing limits. To see if your game can benefit from **Extended Services for Compute**:
+
+- Check [server heartbeat](../performance-optimization/identify.md#server-compute) for persistent drops below 60 FPS.
+- Examine CPU core utilization on the [Performance dashboard](../production/analytics/performance.md#server-charts).
+
+<Alert severity="success">
+Before you pay for more CPU, try to [reduce the work your servers do](../performance-optimization/improve.md).
+</Alert>
+
+## Manage billing
+
+To access the Extended Services billing dashboard:
+
+1. Go to **Finances** ⟩ **Billing**.
+2. Select the **Cloud services** tab to display the following:
+   - Your pending balance, including month-to-date cost
+   - Your billing history, including all Extended Services billing activity across your games
+
+For a detailed breakdown of your current pending balance costs, click **View Details** next to your payment method. For a detailed invoice of a previous bill, click **View Bill** under **Billing history**.
+
+## Service pricing
+
+See the following table for Extended Services pricing:
+
+<table>
+<thead>
+  <tr>
+    <th>**Service**</th>
+    <th></th>
+    <th>**Default**</th>
+    <th>**Extended**</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><a href="https://create.roblox.com/docs/cloud-services/memory-stores" style={{color: 'inherit', textDecoration: 'underline'}}>Memory stores</a></td>
+    <td>Requests</td>
+    <td>1000 + (CCU × 120) requests per minute</td>
+    <td>$0.003 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Storage</td>
+    <td>64 KB + (CCU × 1.2 KB)</td>
+    <td>$0.10 / GB per hour&sup1;</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/audio/objects#text-to-speech" style={{color: 'inherit', textDecoration: 'underline'}}>Text-to-speech</a></td>
+    <td>Requests</td>
+    <td>1 + (CCU × 6) requests per minute</td>
+    <td>$5.00 / 1M requests</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/audio/objects#speech-to-text" style={{color: 'inherit', textDecoration: 'underline'}}>Speech-to-text</a></td>
+    <td>Requests</td>
+    <td>1 + (CCU × 5) requests per minute</td>
+    <td>$1 / 1M requests</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/cloud-services/data-stores" style={{color: 'inherit', textDecoration: 'underline'}}>Standard data stores</a></td>
+    <td>Get</td>
+    <td>250 + (CCU * 40) requests per minute</td>
+    <td>$0.08 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Set</td>
+    <td>250 + (CCU * 20) requests per minute</td>
+    <td>$0.80 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>List</td>
+    <td>10 + (CCU * 2) requests per minute</td>
+    <td>$0.60 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Remove</td>
+    <td>100 + (CCU * 40) requests per minute</td>
+    <td>$0.80 / 1M requests</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/cloud-services/data-stores" style={{color: 'inherit', textDecoration: 'underline'}}>Ordered data stores </a></td>
+    <td>Get</td>
+    <td>250 + (CCU * 40) requests per minute</td>
+    <td>$0.08 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Set</td>
+    <td>250 + (CCU * 20) requests per minute</td>
+    <td>$0.25 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>GetSorted</td>
+    <td>100 + (CCU * 2) requests per minute</td>
+    <td>$0.32 / 1M requests</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Remove</td>
+    <td>100 + (CCU * 40) requests per minute</td>
+    <td>$0.25 / 1M requests</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/cloud-services/data-stores" style={{color: 'inherit', textDecoration: 'underline'}}>Data store storage </a></td>
+    <td>Storage</td>
+    <td>100 MB + (1 MB * Lifetime Players) GB per month</td>
+    <td>$0.12 / GB per month</td>
+  </tr>
+
+  <tr>
+    <td><a href="https://create.roblox.com/docs/production/analytics/performance" style={{color: 'inherit', textDecoration: 'underline'}}>Compute </a></td>
+    <td>CPU cores</td>
+    <td>First 100K playtime hours per month at no charge (when enrolled in Extended Services for Compute)</td>
+    <td>$0.001 / playtime hour&sup2;</td>
+  </tr>
+</tbody>
+</table>
+
+<figcaption>&sup1; GB per hour = the storage consumption multiplied by the amount of time. For example, 100 GB hours might equate to "100 GB × 1 hour" or "200 GB × 0.5 hours".</figcaption>
+
+<figcaption>&sup2; Extended Services for Compute is billed based on how long the feature remains enabled, measured in minutes of playtime. Because enabling the feature reserves additional compute capacity for your game, charges apply whenever the feature is active, even if the additional compute is not fully consumed. Playtime hours are calculated as the sum of all player session durations. For example, if 10,000 users each play for 1 hour, that equals 10,000 playtime hours, resulting in $10 in charges beyond the included monthly allowance of 100,000 playtime hours. These limits and pricing only apply to games enrolled in Extended Services for Compute. Games that do not enroll continue to receive unlimited playtime hours under the current default limits at no additional charge.</figcaption>
+
+## Supported countries
+
+Extended Services is available in the following countries:
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Australia</td>
+      <td>Germany</td>
+      <td>Poland</td>
+    </tr>
+    <tr>
+      <td>Austria</td>
+      <td>Hong Kong</td>
+      <td>Portugal</td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>Hungary</td>
+      <td>Romania</td>
+    </tr>
+    <tr>
+      <td>Brazil</td>
+      <td>Ireland</td>
+      <td>Singapore</td>
+    </tr>
+    <tr>
+      <td>Bulgaria</td>
+      <td>Italy</td>
+      <td>Slovakia</td>
+    </tr>
+    <tr>
+      <td>Canada</td>
+      <td>Kazakhstan</td>
+      <td>Slovenia</td>
+    </tr>
+    <tr>
+      <td>Chile</td>
+      <td>Latvia</td>
+      <td>South Africa</td>
+    </tr>
+    <tr>
+      <td>Croatia</td>
+      <td>Lithuania</td>
+      <td>South Korea</td>
+    </tr>
+    <tr>
+      <td>Cyprus</td>
+      <td>Malaysia</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <td>Czechia</td>
+      <td>Malta</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Denmark</td>
+      <td>Mexico</td>
+      <td>Switzerland</td>
+    </tr>
+    <tr>
+      <td>Estonia</td>
+      <td>Netherlands</td>
+      <td>Thailand</td>
+    </tr>
+    <tr>
+      <td>Finland</td>
+      <td>New Zealand</td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>Norway</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <td>Georgia</td>
+      <td>Peru</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+## Additional localizations for this page
+
+For additional, localized versions of this page that aren't available in the site's language picker, see the following links:
+
+- [Bulgarian (български)](https://create.roblox.com/docs/bg-bg/cloud-services/extended-services)
+- [Croatian (hrvatski)](https://create.roblox.com/docs/hr-hr/cloud-services/extended-services)
+- [Czech (čeština)](https://create.roblox.com/docs/cs-cz/cloud-services/extended-services)
+- [Danish (dansk)](https://create.roblox.com/docs/da-dk/cloud-services/extended-services)
+- [Dutch (Nederlands)](https://create.roblox.com/docs/nl-nl/cloud-services/extended-services)
+- [Estonian (eesti)](https://create.roblox.com/docs/et-ee/cloud-services/extended-services)
+- [Finnish (suomi)](https://create.roblox.com/docs/fi-fi/cloud-services/extended-services)
+- [Greek (Ελληνικά)](https://create.roblox.com/docs/el-gr/cloud-services/extended-services)
+- [Hungarian (magyar)](https://create.roblox.com/docs/hu-hu/cloud-services/extended-services)
+- [Irish (Gaeilge)](https://create.roblox.com/docs/ga-ie/cloud-services/extended-services)
+- [Latvian (latviešu)](https://create.roblox.com/docs/lv-lv/cloud-services/extended-services)
+- [Lithuanian (lietuvių)](https://create.roblox.com/docs/lt-lt/cloud-services/extended-services)
+- [Maltese (Malti)](https://create.roblox.com/docs/mt-mt/cloud-services/extended-services)
+- [Portuguese - Portugal (português)](https://create.roblox.com/docs/pt-pt/cloud-services/extended-services)
+- [Romanian (română)](https://create.roblox.com/docs/ro-ro/cloud-services/extended-services)
+- [Slovak (slovenčina)](https://create.roblox.com/docs/sk-sk/cloud-services/extended-services)
+- [Slovenian (slovenščina)](https://create.roblox.com/docs/sl-si/cloud-services/extended-services)
+- [Swedish (svenska)](https://create.roblox.com/docs/sv-se/cloud-services/extended-services)
