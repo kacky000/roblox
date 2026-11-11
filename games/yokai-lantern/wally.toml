@@ -1,0 +1,9 @@
+[package]
+name = "you/yokai-lantern"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+# 本番では ProfileStore 等を使う場合ここに追加（例）:
+# ProfileStore = "lm-loleris/profilestore@1.0.3"

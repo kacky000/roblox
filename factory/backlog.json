@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "yokai-lantern",
+    "title": "Yokai Lantern Shrine",
+    "pitch": "夜のあいだだけ提灯で妖怪を誘い、神社に住まわせて放置収益を得る",
+    "mechanic": "昼夜サイクル（夜は誘いの運が上がる）",
+    "reuse": "テンプレートの放置収益・ガチャ・天井・リバース",
+    "status": "built"
+  },
+  {
+    "slug": "rooftop-delivery",
+    "title": "Rooftop Delivery",
+    "pitch": "実在の街区の屋上を跳び移って荷物を届けるタイムアタック",
+    "mechanic": "配達地点のランダム生成とタイム計測、ランキング",
+    "reuse": "assets/city/shibuya の Part 版マップ",
+    "status": "todo"
+  },
+  {
+    "slug": "city-splash-mini",
+    "title": "City Splash",
+    "pitch": "4v4。5分で街の床を自分のチームの色に塗り、広いほうが勝ち",
+    "mechanic": "グリッドの塗り面積をサーバーで集計",
+    "reuse": "Net・RateLimiter、手作りの1ブロック",
+    "status": "todo"
+  },
+  {
+    "slug": "konbini-night-shift",
+    "title": "Night Shift Konbini",
+    "pitch": "深夜の店で、客に紛れた「異変」を見抜いて閉め出す（2〜4人協力）",
+    "mechanic": "異変をデータで定義し、毎晩ランダムに出す",
+    "reuse": "放置収益を日給に置き換え",
+    "status": "todo"
+  },
+  {
+    "slug": "shadow-tag-night",
+    "title": "Shadow Tag",
+    "pitch": "提灯を持った鬼の光に入ったら捕まる。影の中を逃げる鬼ごっこ",
+    "mechanic": "光の円錐と遮蔽物の判定（Raycast）",
+    "reuse": "Net・ラウンド進行",
+    "status": "todo"
+  },
+  {
+    "slug": "sushi-conveyor",
+    "title": "Sushi Conveyor Tycoon",
+    "pitch": "流れてくる皿から注文どおりの寿司を取って客に出し、店を広げる",
+    "mechanic": "コンベアと注文の照合、連続成功ボーナス",
+    "reuse": "Economy・アップグレード・リバース",
+    "status": "todo"
+  },
+  {
+    "slug": "daruma-stop",
+    "title": "Daruma Stop",
+    "pitch": "だるまが振り向いているあいだは動くな。最初にゴールした人の勝ち",
+    "mechanic": "振り向きタイミングと移動検知（サーバー判定）",
+    "reuse": "ラウンド進行・コイン報酬",
+    "status": "todo"
+  },
+  {
+    "slug": "matsuri-goldfish",
+    "title": "Matsuri Goldfish",
+    "pitch": "夏祭りの金魚すくい。破れる前に何匹すくえるか。金魚を集めて池を育てる",
+    "mechanic": "タイミング操作と耐久ゲージ、図鑑",
+    "reuse": "WeightedRandom・図鑑（inventory）",
+    "status": "todo"
+  },
+  {
+    "slug": "kaiju-block-defense",
+    "title": "Kaiju Block Defense",
+    "pitch": "架空の巨大生物から街の1ブロックを4人で守る。残った建物の数が報酬",
+    "mechanic": "建物のHPと波状の襲来、協力の修理",
+    "reuse": "Part 版の街区、Economy",
+    "status": "todo"
+  },
+  {
+    "slug": "onsen-tycoon",
+    "title": "Onsen Inn Tycoon",
+    "pitch": "山の温泉宿を育てる。客が湯に浸かるほど収益が増え、部屋を増築する",
+    "mechanic": "客の行列と滞在時間で収益が決まる",
+    "reuse": "放置収益・オフライン収益・リバース",
+    "status": "todo"
+  },
+  {
+    "slug": "platform-sort",
+    "title": "Platform Sort",
+    "pitch": "ホームに来る乗客を、色の合う電車へ時間内に案内するパーティーゲーム",
+    "mechanic": "色分けの仕分けと制限時間、連鎖ボーナス",
+    "reuse": "ラウンド進行・Net",
+    "status": "todo"
+  },
+  {
+    "slug": "ramen-rush",
+    "title": "Ramen Rush",
+    "pitch": "2〜4人で屋台を回す。麺・スープ・具を分担して、行列をさばく",
+    "mechanic": "工程の分担と注文のタイマー",
+    "reuse": "Net・コイン報酬・アップグレード",
+    "status": "todo"
+  },
+  {
+    "slug": "vending-street",
+    "title": "Vending Street",
+    "pitch": "自販機が並ぶ路地を歩き、当たり付きのカプセルを集めて自分の棚に飾る",
+    "mechanic": "自販機ごとの在庫と入れ替えタイマー（確率表示つき）",
+    "reuse": "ガチャ・天井・PolicyService 制限",
+    "status": "todo"
+  },
+  {
+    "slug": "daily-city-run",
+    "title": "Daily City Run",
+    "pitch": "毎日ちがう実在の街区を走り抜けるコース。全員が同じ街で1日のタイムを競う",
+    "mechanic": "日付からコースを決める仕組みと日次ランキング",
+    "reuse": "CityBuilder（B 方式）、rooftop-delivery の計測",
+    "status": "todo"
+  }
+]

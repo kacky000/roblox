@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "yokai-lantern",
+    "title": "Yokai Lantern Shrine",
+    "pitch": "夜のあいだだけ提灯で妖怪を誘い、神社に住まわせて放置収益を得る",
+    "created": "2026-11-11",
+    "stage": "built",
+    "universeId": null,
+    "placeId": null,
+    "publicDate": null,
+    "iterations": 0,
+    "trafficRetries": 0,
+    "snapshots": [],
+    "log": [
+      "2026-11-11 作成",
+      "2026-11-11 判定 BUILD_ONLY：まだ公開していない（スロットの割り当てと公開が必要）"
+    ],
+    "lastDecision": "BUILD_ONLY"
+  }
+]

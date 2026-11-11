@@ -17,6 +17,7 @@
 - `reports/future_games_plan.md`：今後のゲーム計画（都市エンジンと、その上に乗るゲーム群）。企画の順番はここに従う
 - `tools/city/`：実在都市の区画を Roblox 用に変換する（`osm_city.py` でメッシュとデータを作り、`CityBuilder.luau` で実行時に Part で組み立てる）。データのライセンス（ODbL・PLATEAU）を必ず守る
 - `assets/city/`：生成した区画のサンプル（ODbL）
+- `factory/`：日次ファクトリー（毎日1本作る→数字で判定→伸びているものを更新）。手順は `factory/README.md` と `roblox-daily-factory` スキル、道具は `tools/factory/factory.py`。**「今日の分」と言われたらこの手順で回す**
 - `docs/roblox-creator-docs/`：Roblox 公式ドキュメントの本文（CC BY 4.0）。**API や仕様は推測せず、ここを grep して確認する**
 - `games/_template/`：Rojo テンプレート（データ保存、課金、ガチャ、経済、レート制限）
 - `games/<slug>/`：各ゲーム。`GDD.md`、`CHANGELOG.md`、`assets.md` を置く
@@ -29,6 +30,7 @@
 - ツールは `~/.rokit/bin`（rokit）。Git Bash では `export PATH="$HOME/.rokit/bin:$PATH"` を先にする。rokit の shim はリポジトリの外（`/tmp` など）では動かないので、lint 対象のファイルはリポジトリ内に置いて実行する
 - `rojo plugin install` はレジストリが見つからず失敗する。Rojo リリースの `Rojo.rbxm` を `%LOCALAPPDATA%\Roblox\Plugins\` に置く
 - Python の print は cp932 で落ちる。スクリプトの冒頭で `sys.stdout.reconfigure(encoding="utf-8")` にする
+- Bash ツールのヒアドキュメントに書いた Python では、バックスラッシュ2つ＋n が改行に化ける。Luau のコードを文字列で埋め込むときは `chr(92)` を使うか、Write ツールでファイルに書く
 - ファイルを書くときは `open(..., newline="\n")` にする。CRLF になると stylua（`line_endings = "Unix"`）の差分が出る
 - `core.autocrlf=true` なので、Windows で `tools/check.sh` を回すと LF/CRLF の警告が出る（無害）
 - 既存の `_template` は stylua で未整形。`check.sh` を回すと5ファイルが整形される。直すときは別の commit にする

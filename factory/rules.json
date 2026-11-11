@@ -1,0 +1,11 @@
+{
+  "_comment": "判定ルール。根拠は .claude/skills/roblox-game-concept/SKILL.md の「続けるか撤退するかの判断」。率は 0〜1。変えたら tools/factory/factory.py selftest を回す",
+  "newGamesPerDay": 1,
+  "maxScale": 3,
+  "minPlays": 100,
+  "noTrafficDays": 7,
+  "maxTrafficRetries": 1,
+  "maxIterations": 3,
+  "scale": { "d1": 0.2, "d7": 0.07, "session": 12, "need": 2 },
+  "kill": { "d1": 0.1, "session": 5, "bounce60": 0.6, "need": 2 }
+}
