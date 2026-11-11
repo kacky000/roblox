@@ -16,3 +16,5 @@ assets/city/**/osm_cache.json
 assets/city/**/city.mtl
 assets/city/**/palette.png
 assets/city/**/*.svg
+__pycache__/
+*.pyc
