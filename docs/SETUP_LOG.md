@@ -47,7 +47,7 @@
 - `check.sh` は PATH に `~/.cargo/bin` 等しか足さないので、Windows では `~/.rokit/bin` が PATH に入った状態で Git Bash から実行する必要がある。
 
 ## ユーザーに残っている作業（★）
-1. Roblox Studio を起動してログイン、2段階認証をオン（設定 → セキュリティ）
+1. Roblox Studio を起動してログイン（未確認）。2段階認証は **オン済み**（2026-11-11、ユーザー報告）
 2. Studio: Assistant → … → Manage MCP Servers → **Enable Studio as MCP server** をオン、Quick Connect で Claude Code をオン
 3. Studio で Baseplate を開き、Rojo プラグインで Connect（先に `rojo serve games/_template/default.project.json`）→ F5 で Output とHUDを確認
 4. 公開前に本人確認（ID 認証）
