@@ -32,7 +32,7 @@ DEFAULT_TRI_BUDGET = 2_000  # 小物はこれ以下を推奨（モバイル比�
 # 16行 x 8列 = 128色（256x256px, セル 32x16px）。行=色相系統、列=明度(0暗→7明)
 PALETTE_COLS = 8
 PALETTE_ROWS = 16
-PALETTE_PX = 256  # Roblox テクスチャ上限 1024 以下
+PALETTE_PX = 256  # Roblox テクスチャ上限は 4096（research/03 §4.1）。パレットは小さいほど軽い
 
 # (名前, 色相, 彩度基準)  彩度0 = グレー系
 PALETTE_ROW_DEFS = [

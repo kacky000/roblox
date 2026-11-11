@@ -13,7 +13,10 @@
 | Studio 連携、MCP、Rojo、Open Cloud | `roblox-studio-mcp` |
 
 ## ディレクトリ
-- `research/`：市場（01）、スタジオの手法（02）、AIツールチェーン（03）の調査。数値は 2026-11 時点で、【確定／報道／推計】のラベル付き
+- `research/`：市場（01）、スタジオの手法（02）、AIツールチェーン（03）、市場の最新とジャンル選び（04）、実在都市のデータと権利（05）、エンジンの限界（06）の調査。数値は 2026-11 時点で、【確定／報道／推計】のラベル付き
+- `reports/future_games_plan.md`：今後のゲーム計画（都市エンジンと、その上に乗るゲーム群）。企画の順番はここに従う
+- `tools/city/`：実在都市の区画を Roblox 用に変換する（`osm_city.py` でメッシュとデータを作り、`CityBuilder.luau` で実行時に Part で組み立てる）。データのライセンス（ODbL・PLATEAU）を必ず守る
+- `assets/city/`：生成した区画のサンプル（ODbL）
 - `docs/roblox-creator-docs/`：Roblox 公式ドキュメントの本文（CC BY 4.0）。**API や仕様は推測せず、ここを grep して確認する**
 - `games/_template/`：Rojo テンプレート（データ保存、課金、ガチャ、経済、レート制限）
 - `games/<slug>/`：各ゲーム。`GDD.md`、`CHANGELOG.md`、`assets.md` を置く
@@ -21,6 +24,14 @@
 - `tools/new_game.sh <slug>`：新規ゲームを作る
 - `tools/blender/rbx_assets.py <spec.json>`：ローポリアセットを生成する（`.venv/bin/python` で実行）
 - `tools/roblox-api/`：luau-lsp 用の型定義と API ダンプ（取得元は raw.githubusercontent.com）
+
+## 環境（Windows PC）で踏んだ落とし穴
+- ツールは `~/.rokit/bin`（rokit）。Git Bash では `export PATH="$HOME/.rokit/bin:$PATH"` を先にする。rokit の shim はリポジトリの外（`/tmp` など）では動かないので、lint 対象のファイルはリポジトリ内に置いて実行する
+- `rojo plugin install` はレジストリが見つからず失敗する。Rojo リリースの `Rojo.rbxm` を `%LOCALAPPDATA%\Roblox\Plugins\` に置く
+- Python の print は cp932 で落ちる。スクリプトの冒頭で `sys.stdout.reconfigure(encoding="utf-8")` にする
+- ファイルを書くときは `open(..., newline="\n")` にする。CRLF になると stylua（`line_endings = "Unix"`）の差分が出る
+- `core.autocrlf=true` なので、Windows で `tools/check.sh` を回すと LF/CRLF の警告が出る（無害）
+- 既存の `_template` は stylua で未整形。`check.sh` を回すと5ファイルが整形される。直すときは別の commit にする
 
 ## 環境（クラウドコンテナ）
 - PATH：`$HOME/.cargo/bin:$HOME/.local/bin`

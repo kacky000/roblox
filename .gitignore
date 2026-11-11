@@ -9,3 +9,10 @@ games/*/Packages/*
 *.rbxl
 *.rbxlx
 .env
+
+# 都市データ（tools/city/osm_city.py で再生成できる大きいファイル）
+assets/city/**/*.obj
+assets/city/**/osm_cache.json
+assets/city/**/city.mtl
+assets/city/**/palette.png
+assets/city/**/*.svg
