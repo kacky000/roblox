@@ -51,8 +51,8 @@ local function load(player: Player): PlayerData?
 				lockedElsewhere = true
 				return nil -- 書き込まない
 			end
-			local data = if old then DataTemplate.migrate(old) else DataTemplate.new()
-			;(data :: any).__lock = { job = JOB_ID, t = now }
+			local data = if old then DataTemplate.migrate(old) else DataTemplate.new();
+			(data :: any).__lock = { job = JOB_ID, t = now }
 			result = data
 			return data
 		end)
@@ -128,7 +128,9 @@ function DataService.start()
 			return
 		end
 		if not data then
-			player:Kick("データの読み込みに失敗しました。再参加してください。 / Failed to load data, please rejoin.")
+			player:Kick(
+				"データの読み込みに失敗しました。再参加してください。 / Failed to load data, please rejoin."
+			)
 			return
 		end
 		cache[player] = data

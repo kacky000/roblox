@@ -31,7 +31,8 @@ function MonetizationService.hasPass(player: Player, passName: string): boolean
 	if not def or def.id == 0 then
 		return false
 	end
-	local ok, owns = pcall(MarketplaceService.UserOwnsGamePassAsync, MarketplaceService, player.UserId, def.id)
+	local ok, owns =
+		pcall(MarketplaceService.UserOwnsGamePassAsync, MarketplaceService, player.UserId, def.id)
 	local result = ok and owns == true
 	passCache[player] = passCache[player] or {}
 	if ok then
@@ -70,8 +71,9 @@ local function grant(player: Player, def: Products.DevProduct): boolean
 			local now = os.time()
 			local cur = boosts[def.boost :: string]
 			local startAt = if cur and cur.expires > now then cur.expires else now
-			boosts[def.boost :: string] = { value = def.value or 1, expires = startAt + (def.minutes or 0) * 60 }
-			;(data :: any).boosts = boosts
+			boosts[def.boost :: string] =
+				{ value = def.value or 1, expires = startAt + (def.minutes or 0) * 60 }
+			(data :: any).boosts = boosts
 			granted = true
 		end
 	end)

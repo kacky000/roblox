@@ -96,12 +96,20 @@ local function onLoaded(player: Player, data: any)
 	if data.lastOnline > 0 then
 		local away = os.time() - data.lastOnline
 		local eff = MonetizationService.perk(player, "offlineEfficiency", GameConfig.OfflineEfficiency)
-		local earned = Economy.offlineEarnings(GameService.incomePerSecond(player), away, GameConfig.OfflineCapSeconds, eff)
+		local earned = Economy.offlineEarnings(
+			GameService.incomePerSecond(player),
+			away,
+			GameConfig.OfflineCapSeconds,
+			eff
+		)
 		if earned > 0 then
 			DataService.update(player, function(d)
 				d.coins += earned
 			end)
-			Notify:FireClient(player, `おかえり！オフライン中に {Economy.abbreviate(earned)} コイン獲得`)
+			Notify:FireClient(
+				player,
+				`おかえり！オフライン中に {Economy.abbreviate(earned)} コイン獲得`
+			)
 		end
 	end
 	push(player)
@@ -185,7 +193,8 @@ function GameService.start()
 			end
 			d[egg.currency] -= egg.price
 			local luck = MonetizationService.perk(player, "luck", 1) * boostValue(d, "luck")
-			local entry, newPity = WeightedRandom.rollWithPity(egg.entries, nextNumber, luck, egg.pity, d.pity[eggId] or 0)
+			local entry, newPity =
+				WeightedRandom.rollWithPity(egg.entries, nextNumber, luck, egg.pity, d.pity[eggId] or 0)
 			d.pity[eggId] = newPity
 			d.inventory[entry.id] = (d.inventory[entry.id] or 0) + 1
 			d.stats.rolls += 1

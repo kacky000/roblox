@@ -36,11 +36,17 @@ local function button(parent: Instance, text: string, pos: UDim2, color: Color3,
 		TextColor3 = Color3.new(1, 1, 1),
 	}, parent)
 	make("UICorner", { CornerRadius = UDim.new(0.25, 0) }, b)
-	make("UIStroke", { Thickness = 3, Color = Color3.fromRGB(30, 30, 50), ApplyStrokeMode = Enum.ApplyStrokeMode.Border }, b)
+	make(
+		"UIStroke",
+		{ Thickness = 3, Color = Color3.fromRGB(30, 30, 50), ApplyStrokeMode = Enum.ApplyStrokeMode.Border },
+		b
+	)
 	make("UIAspectRatioConstraint", { AspectRatio = 2.6 }, b)
 	b.Activated:Connect(function()
 		local s = b.Size
-		TweenService:Create(b, TweenInfo.new(0.06), { Size = UDim2.fromScale(s.X.Scale * 0.92, s.Y.Scale * 0.92) }):Play()
+		TweenService
+			:Create(b, TweenInfo.new(0.06), { Size = UDim2.fromScale(s.X.Scale * 0.92, s.Y.Scale * 0.92) })
+			:Play()
 		task.delay(0.06, function()
 			TweenService:Create(b, TweenInfo.new(0.1, Enum.EasingStyle.Back), { Size = s }):Play()
 		end)
@@ -50,8 +56,11 @@ local function button(parent: Instance, text: string, pos: UDim2, color: Color3,
 end
 
 function HudController.start()
-	local gui = make("ScreenGui", { Name = "HUD", ResetOnSpawn = false, IgnoreGuiInset = false },
-		Players.LocalPlayer:WaitForChild("PlayerGui"))
+	local gui = make(
+		"ScreenGui",
+		{ Name = "HUD", ResetOnSpawn = false, IgnoreGuiInset = false },
+		Players.LocalPlayer:WaitForChild("PlayerGui")
+	)
 
 	local coinLabel = make("TextLabel", {
 		Size = UDim2.fromScale(0.3, 0.08),
@@ -101,9 +110,15 @@ function HudController.start()
 	button(gui, "収入UP", UDim2.fromScale(0.5, 0.97), Color3.fromRGB(80, 200, 120), function()
 		Net.event("RequestUpgrade"):FireServer("Income")
 	end)
-	local rebirthBtn = button(gui, "リバース", UDim2.fromScale(0.75, 0.97), Color3.fromRGB(230, 90, 160), function()
-		Net.event("RequestRebirth"):FireServer()
-	end)
+	local rebirthBtn = button(
+		gui,
+		"リバース",
+		UDim2.fromScale(0.75, 0.97),
+		Color3.fromRGB(230, 90, 160),
+		function()
+			Net.event("RequestRebirth"):FireServer()
+		end
+	)
 
 	Net.event("DataChanged").OnClientEvent:Connect(function(d)
 		coinLabel.Text = "🪙 " .. Economy.abbreviate(d.coins)

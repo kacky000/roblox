@@ -41,7 +41,12 @@ function Economy.rebirthCost(base: number, growth: number, rebirths: number): nu
 end
 
 -- オフライン収益: 上限時間でキャップし、効率を掛ける（例: 50%、パス所持で100%）
-function Economy.offlineEarnings(perSecond: number, secondsAway: number, capSeconds: number, efficiency: number): number
+function Economy.offlineEarnings(
+	perSecond: number,
+	secondsAway: number,
+	capSeconds: number,
+	efficiency: number
+): number
 	local t = math.clamp(secondsAway, 0, capSeconds)
 	return math.floor(perSecond * t * efficiency)
 end
