@@ -32,6 +32,8 @@
 - Python の print は cp932 で落ちる。スクリプトの冒頭で `sys.stdout.reconfigure(encoding="utf-8")` にする
 - Bash ツールのヒアドキュメントに書いた Python では、バックスラッシュ2つ＋n が改行に化ける。Luau のコードを文字列で埋め込むときは `chr(92)` を使うか、Write ツールでファイルに書く
 - Open Cloud の公開が HTTP 409（Server is busy）になるときは、その体験を Studio で開いたままにしている。Studio でプレースを閉じて1分待ってから再実行する
+- Rojo のビルドは Workspace が空。地面とスポーン地点が無いとプレイヤーは落ち続ける。テンプレートの `WorldService` を必ず起動順の先頭に入れる（2026-11-15 に yokai-lantern で発覚）
+- Studio の画面操作（computer use）は、別アプリのウィンドウが重なっているとクリックが届かないことがある。プレイテストは画面操作に頼らず、Open Cloud の Luau Execution か Studio MCP を使う
 - ファイルを書くときは `open(..., newline="\n")` にする。CRLF になると stylua（`line_endings = "Unix"`）の差分が出る
 - `core.autocrlf=true` なので、Windows で `tools/check.sh` を回すと LF/CRLF の警告が出る（無害）
 - 既存の `_template` は stylua で未整形。`check.sh` を回すと5ファイルが整形される。直すときは別の commit にする
