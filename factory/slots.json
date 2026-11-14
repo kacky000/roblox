@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "universeId": 10776632209,
+    "placeId": 106918462387657,
+    "name": "Factory Slot 01",
+    "account": "Kacky_Kacky",
+    "slug": null
+  },
+  {
+    "universeId": 10776633141,
+    "placeId": 100372068387866,
+    "name": "Factory Slot 02",
+    "account": "Kacky_Kacky",
+    "slug": null
+  }
+]
