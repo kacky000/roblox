@@ -13,7 +13,7 @@
     "pitch": "実在の街区の屋上を跳び移って荷物を届けるタイムアタック",
     "mechanic": "配達地点のランダム生成とタイム計測、ランキング",
     "reuse": "assets/city/shibuya の Part 版マップ",
-    "status": "todo"
+    "status": "built"
   },
   {
     "slug": "city-splash-mini",

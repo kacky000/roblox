@@ -16,5 +16,23 @@
       "2026-11-11 判定 BUILD_ONLY：まだ公開していない（スロットの割り当てと公開が必要）"
     ],
     "lastDecision": "BUILD_ONLY"
+  },
+  {
+    "slug": "rooftop-delivery",
+    "title": "Rooftop Delivery",
+    "pitch": "実在の街区の屋上を跳び移って荷物を届けるタイムアタック",
+    "created": "2026-11-14",
+    "stage": "built",
+    "universeId": null,
+    "placeId": null,
+    "publicDate": null,
+    "iterations": 0,
+    "trafficRetries": 0,
+    "snapshots": [],
+    "log": [
+      "2026-11-14 作成",
+      "2026-11-14 判定 BUILD_ONLY：まだ公開していない（スロットの割り当てと公開が必要）"
+    ],
+    "lastDecision": "BUILD_ONLY"
   }
 ]
