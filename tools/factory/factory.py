@@ -5,6 +5,7 @@
   python tools/factory/factory.py next              今日作るネタ（backlog の先頭）を表示
   python tools/factory/factory.py add <slug>        作ったゲームを台帳に登録（tools/check.sh が通ってから）
   python tools/factory/factory.py publish <slug>    rojo build → Open Cloud で公開（空きスロットを割り当てる）
+  python tools/factory/factory.py smoke <slug>      Roblox のサーバー上で起動テスト（Luau Execution）
   python tools/factory/factory.py metrics           公開中の全ゲームの数字を Analytics API から取得
   python tools/factory/factory.py decide            ルール（factory/rules.json）で判定し、今日の作業リストを出す
   python tools/factory/factory.py report            factory/reports/<日付>.md を書く
@@ -273,6 +274,36 @@ def cmd_publish(a):
     print(f"公開しました：{a.slug} v{res.get('versionNumber')}（体験を「公開」に切り替えるのは Creator Hub で。切り替えたら --public を付けて記録する）")
 
 
+def cmd_smoke(a):
+    """Roblox のサーバー上で place を起動し、サービスの start でエラーが出ないか・歩ける世界があるかを確かめる。"""
+    g = find(load("portfolio.json", []), a.slug)
+    if not g.get("universeId"):
+        sys.exit("まだスロットに公開していません（先に publish）")
+    key = api_key()
+    with open(os.path.join(ROOT, "tools", "factory", "smoke.luau"), encoding="utf-8") as f:
+        script = f.read()
+    base = f"{API}/cloud/v2/universes/{g['universeId']}/places/{g['placeId']}/luau-execution-session-tasks"
+    status, res = http("POST", base, key, json.dumps({"script": script}).encode())
+    if status != 200:
+        sys.exit(f"テストを開始できません：HTTP {status} {res}")
+    path = res["path"]
+    for _ in range(60):
+        if res.get("state") in ("COMPLETE", "FAILED", "CANCELLED"):
+            break
+        time.sleep(3)
+        status, res = http("GET", f"{API}/cloud/v2/{path}", key)
+    _, logs = http("GET", f"{API}/cloud/v2/{path}/logs", key)
+    lines = [m for entry in logs.get("luauExecutionSessionTaskLogs", []) for m in entry.get("messages", [])]
+    out = (res.get("output") or {}).get("results") or [{}]
+    result = out[0] if out else {}
+    passed = res.get("state") == "COMPLETE" and bool(result.get("ok"))
+    print(json.dumps({"state": res.get("state"), "result": result, "error": res.get("error")}, ensure_ascii=False, indent=1))
+    for line in lines[-30:]:
+        print("  log>", line)
+    print("smoke:", "通過" if passed else "失敗")
+    sys.exit(0 if passed else 1)
+
+
 def cmd_metrics(_):
     portfolio, key = load("portfolio.json", []), api_key()
     end = dt.datetime.now(dt.timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
@@ -373,6 +404,7 @@ def main():
     for name, fn in [("status", cmd_status), ("next", cmd_next), ("metrics", cmd_metrics), ("report", cmd_report), ("selftest", cmd_selftest)]:
         sub.add_parser(name).set_defaults(fn=fn)
     p = sub.add_parser("add"); p.add_argument("slug"); p.set_defaults(fn=cmd_add)
+    p = sub.add_parser("smoke"); p.add_argument("slug"); p.set_defaults(fn=cmd_smoke)
     p = sub.add_parser("publish"); p.add_argument("slug"); p.add_argument("--dry-run", action="store_true")
     p.add_argument("--public", action="store_true", help="体験を公開に切り替えた日として記録する"); p.set_defaults(fn=cmd_publish)
     p = sub.add_parser("decide"); p.add_argument("--no-save", action="store_true"); p.set_defaults(fn=cmd_decide)

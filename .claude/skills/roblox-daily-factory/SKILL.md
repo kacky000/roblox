@@ -28,7 +28,7 @@ python tools/factory/factory.py decide    # 今日の作業リストが出る
 | 【終了】 | 台帳の `stage` を killed か archived にする。`slots.json` の該当スロットの `slug` を null に戻す。学びを CHANGELOG に1行。非公開化は人に頼む |
 | 【新作】 | 下の §3 |
 
-## 3. 新作を1本作る（1日で終わる大きさに切る）
+## 3. 新作を作る（1本ずつ、1日で終わる大きさに切る。本数は `factory/rules.json` の `newGamesPerDay`）
 1. `python tools/factory/factory.py next` でネタを取る。
 2. `tools/new_game.sh <slug>` でテンプレートから作る。
 3. **そのゲームだけの遊びを1つ実装する**（ネタの `mechanic`）。`roblox-luau-systems` スキルの不変ルールを守る（サーバー権威、DataService 経由、課金は冪等）。
@@ -38,6 +38,7 @@ python tools/factory/factory.py decide    # 今日の作業リストが出る
 5. `tools/check.sh games/<slug>` が通るまで直す。**通らないものは登録しない。**
 6. `python tools/factory/factory.py add <slug>` → `publish <slug>`（スロットかキーが無ければ飛ばす）。
 7. 法務チェック（`reports/future_games_plan.md` §2-5）を通す。
+8. `python tools/factory/factory.py smoke <slug>` で、Roblox のサーバー上の起動テストを通す（サービスの start でエラーが出ない、スポーン地点と地面がある）。失敗したら直して publish し直す。HTTP 403 のときは API キーに Luau 実行の権限が無いので、報告の「お願い」に書いて先へ進む。
 
 ### 稼げる品質の最低ライン（これを満たさないものは公開しない）
 - **歩ける世界がある。** `WorldService` が地面とスポーン地点を作る（テンプレートに入っている）。ゲームごとの見た目は `WorldService.decorate` に Part で足す。文字とボタンだけの画面にしない。
